@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codex.ytdl.Controller">
+   <children>
+      <Group layoutX="15.0" layoutY="36.0">
+         <children>
+            <TextField fx:id="youTubeDLLocationField" layoutX="36.0" layoutY="17.0" prefHeight="25.0" prefWidth="520.0" promptText="C:\...." />
+            <Button fx:id="youTubDlLocationBtn" layoutX="561.0" layoutY="17.0" mnemonicParsing="false" onAction="#chooseYTDLLocation" text="Select" />
+            <Text layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Tube DL location" />
+            <Text layoutX="7.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1." />
+         </children>
+      </Group>
+      <Group layoutX="8.0" layoutY="194.0">
+         <children>
+            <TextField fx:id="urlField" layoutX="39.0" layoutY="17.0" prefHeight="25.0" prefWidth="520.0" promptText="http:\\..." />
+            <Text layoutX="8.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Download from URL" />
+            <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4." />
+         </children>
+      </Group>
+      <Group layoutX="4.0" layoutY="88.0">
+         <children>
+            <TextField fx:id="downloadLocationField" layoutX="46.0" layoutY="17.0" prefHeight="25.0" prefWidth="520.0" promptText="C:\..." />
+            <Text layoutX="9.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Download destination" />
+            <Text layoutX="17.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2." />
+            <Button fx:id="downloadLocationBtn" layoutX="572.0" layoutY="16.0" mnemonicParsing="false" onAction="#chooseDownloadLocation" text="Select" />
+         </children>
+      </Group>
+      <Button fx:id="startDownloadBtn" layoutX="12.0" layoutY="261.0" mnemonicParsing="false" onAction="#startDownload" prefHeight="49.0" prefWidth="613.0" text="START" />
+      <Group layoutX="16.0" layoutY="133.0">
+         <children>
+            <Text layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Downloaded song name format" />
+            <TextField fx:id="fileFormatField" layoutX="31.0" layoutY="26.0" prefHeight="25.0" prefWidth="520.0" promptText="\%(title)s.%(ext)s" text="\%(title)s.%(ext)s" />
+            <Text layoutX="7.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3." />
+         </children>
+      </Group>
+      <TextArea fx:id="logScreen" editable="false" layoutX="11.0" layoutY="319.0" prefHeight="260.0" prefWidth="613.0" />
+   </children>
+</Pane>

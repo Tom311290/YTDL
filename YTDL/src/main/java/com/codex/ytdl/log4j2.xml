@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" packages="com.codex.ytdl">
+	
+	<Appenders>
+		<Console name="Console">
+			<PatternLayout pattern="${sys:logMessagePattern}" />
+		</Console>
+		<RollingFile name="RollingFileAppender"
+					fileName="${sys:YTDLTempPath}/${sys:logFileName}"
+					filePattern="${sys:YTDLTempPath}/$${date:yyyy-MM}/log-%d{MM-dd-yyyy}-%i.txt"
+					ignoreExceptions="false">
+			<PatternLayout>
+				<pattern>${sys:logMessagePattern}</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+ 		<Root level="TRACE">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFileAppender" />
+		</Root>
+	</Loggers>
+</Configuration>
