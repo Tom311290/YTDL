@@ -216,7 +216,10 @@ public class Controller {
 
 	@FXML
 	public void chooseYTDLLocation(ActionEvent ae) {
-		final File youTubeDLLocation = fileChooser(ae, "YTDL exe file", "youtube-dl.exe");
+		String filePath = youTubeDLLocationField.getText();
+		String folderPath = filePath != null ? filePath.substring(0, filePath.lastIndexOf("\\")) : "";
+		
+		final File youTubeDLLocation = fileChooser(ae, "YTDL exe file", "youtube-dl.exe", folderPath);
 		youTubeDLLocationField.setText((youTubeDLLocation != null) ? youTubeDLLocation.getAbsolutePath() : youTubeDLLocationField.getText());
 		checkField(youTubeDLLocationField);
 	}
@@ -234,6 +237,9 @@ public class Controller {
 		fileChooser.setTitle("Select path");
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter(params[0], params[1]));
 
+		File startFile = new File(params[2]);
+		fileChooser.setInitialDirectory(startFile);
+		
 		File file = fileChooser.showOpenDialog(getStage(ae));		
 
 		return file;
